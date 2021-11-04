@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { filterByQuery, findById, createNewNote, validateNotes, } = require("../../lib/notes");
-const { notes } = require("../../db/notes");
+const { filterByQuery, createNewNote, validateNotes, } = require("../../lib/notes");
+const { notes } = require("../../db/db");
 
 router.get("/notes", (req, res) => {
   let results = notes;

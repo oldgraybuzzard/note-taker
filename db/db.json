@@ -1,6 +1,10 @@
-[
+{
+    "notes": [
     {
+        "id": "0",
+        "date": "11/4/2021",
         "title":"Test Title",
         "text":"Test text"
     }
-]
+    ]
+}
