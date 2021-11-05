@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { filterByQuery, createNewNote, validateNotes, } = require("../../lib/notes");
+const { filterByQuery, findById, createNewNote, validateNotes, deleteNote, rewriteNotes } = require("../../lib/notes");
 const { notes } = require("../../db/db");
 
 router.get("/notes", (req, res) => {
@@ -31,5 +31,25 @@ router.post("/notes", (req, res) => {
     res.json(note);
   }
 });
+
+router.delete("/notes/:id", function (req, res) {
+  res.send('Got a DELETE request at /api/notes/:id')
+
+  const id = req.params.id;
+
+  const idLess = notes.filter(function (less) {
+      return less.id < id;
+  });
+
+  const idGreater = notes.filter(function (greater) {
+      return greater.id > id;
+  });
+
+  // notes = idLess.concat(idGreater);
+
+  rewriteNotes();
+});
+
+
 
 module.exports = router;

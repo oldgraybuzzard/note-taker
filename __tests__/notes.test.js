@@ -4,6 +4,10 @@ const {
     findById,
     createNewNote,
     validateNotes,
+    rewriteNotes,
+    deleteNote,
+
+
 } = require("../lib/notes.js");
 const { notes } = require("../db/db");
 
@@ -11,7 +15,7 @@ jest.mock('fs');
 
 test("create a note", () => {
     const note = createNewNote(
-        { id: "1", date: "11/4/2021", title: "Note_Test2", text: "jhgdja3ng2" },
+        { id: "1", title: "Note_Test2", text: "jhgdja3ng2" },
         notes
     );
 
@@ -19,34 +23,24 @@ test("create a note", () => {
     expect(note.text).toBe("jhgdja3ng2");
 });
 
-// test("filters by query", () => {
-//     const startingAnimals = [
-//         {
-//             id: "3",
-//             name: "Erica",
-//             species: "gorilla",
-//             diet: "omnivore",
-//             personalityTraits: ["quirky", "rash"],
-//         },
-//         {
-//             id: "4",
-//             name: "Noel",
-//             species: "bear",
-//             diet: "carnivore",
-//             personalityTraits: ["impish", "sassy", "brave"],
-//         },
-//     ];
+test("filters by query", () => {
+    const startingNotess = [
+        {
+            id: "1",
+            title: "Test Title2",
+            text: "Test text2",
+        },
+    ];
   
-//     const updatedAnimals = filterByQuery({ species: "gorilla" }, startingAnimals);
+    const updatedNotess = filterByQuery({ title: "Test Title2" }, startingNotess);
   
-//     expect(updatedAnimals.length).toEqual(1);
-//   });
+    expect(updatedNotess.length).toEqual(1);
+  });
   
   test("finds by id", () => {
     const startingNotes = [
       {
         id: "1",
-        date: "11/4/2021",
         title: "Test Title2",
         text: "Test text2",
       },
@@ -57,3 +51,15 @@ test("create a note", () => {
     expect(result.title).toBe("Test Title2");
   });
   
+  test("delete a note", () => {
+    const removeNote = deleteNote(
+      { id: "1", title: "Note_Test2", text: "jhgdja3ng2" },
+    ) 
+  });
+
+  test("rewrite a note", () => {
+    const addBackNotes = rewriteNotes(
+      { id: "1", title: "Note_Test2", text: "jhgdja3ng2" },
+    )
+
+  })
