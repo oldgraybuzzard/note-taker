@@ -1,5 +1,7 @@
+const fs = require('fs');
+const path = require('path');
 const router = require("express").Router();
-const { filterByQuery, findById, createNewNote, validateNotes, deleteNote, rewriteNotes } = require("../../lib/notes");
+const { filterByQuery, findById, createNewNote, validateNotes, deleteNote } = require("../../lib/notes");
 const { notes } = require("../../db/db");
 
 router.get("/notes", (req, res) => {
@@ -33,23 +35,27 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete("/notes/:id", function (req, res) {
-  res.send('Got a DELETE request at /api/notes/:id')
+  let jsonFilePath = path.join(__dirname, "../../db/db.json");
 
-  const id = req.params.id;
+  // request to delete note by id.
+  for (let i = 0; i < notes.length; i++) {
+      if (notes[i].id == req.params.id) {
+          // Splice takes i position, and then deletes the 1 note.
+          console.log("found id");
+          notes.splice(i, 1);
+          break;
+      }
+  }
+  // Write the db.json file again.
+    fs.writeFileSync(jsonFilePath, JSON.stringify(notes, null, 2), function (err) {
 
-  const idLess = notes.filter(function (less) {
-      return less.id < id;
+      if (err) {
+          return console.log(err);
+      } else {
+          console.log("Your note was deleted!");
+      }
   });
-
-  const idGreater = notes.filter(function (greater) {
-      return greater.id > id;
-  });
-
-  // notes = idLess.concat(idGreater);
-
-  rewriteNotes();
+  res.json(notes);
 });
-
-
 
 module.exports = router;

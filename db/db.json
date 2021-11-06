@@ -1,1 +1,7 @@
-{"notes":[{"id":"0","title":"Test Title","text":"Test text"},{"id":"1","title":"Test Title3","text":"Test text3"},{"title":"Test 1234","text":"test ote","id":"2"}]}
+[
+  {
+    "title": "Testing the application",
+    "text": "This is for the good test\n",
+    "id": "0"
+  }
+]
