@@ -47,7 +47,7 @@ router.delete("/notes/:id", function (req, res) {
       }
   }
   // Write the db.json file again.
-    fs.writeFileSync(jsonFilePath, JSON.stringify(notes, null, 2), function (err) {
+    fs.writeFileSync(jsonFilePath, JSON.stringify({ notes: notes}, null, 2), function (err) {
 
       if (err) {
           return console.log(err);
