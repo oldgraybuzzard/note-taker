@@ -1,7 +1,14 @@
-[
-  {
-    "title": "Testing the application",
-    "text": "This is for the good test\n",
-    "id": "0"
-  }
-]
+{
+  "notes": [
+    {
+      "title": "Testing the application",
+      "text": "This is for the good test\n",
+      "id": "0"
+    },
+    {
+      "title": "fasadklfjaldkjfakldfa",
+      "text": "adf.a,dfk;lajdjfklajdsf",
+      "id": "1"
+    }
+  ]
+}
