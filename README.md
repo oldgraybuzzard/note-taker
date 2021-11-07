@@ -31,7 +31,7 @@ npm install node
 Video walkthrough on Screencastify: https://watch.screencastify.com/v/QbOkM9yg1642F1WVFKY6
 
 Screen shots of application:
-![Initial home page view](assets/images/home_page.png) ![Notes page with no notes saved](assets/images/no_saved_notes.png) ![Notes entered](assets/images/entered_note.png)
+![Initial home page view](https://github.com/oldgraybuzzard/note-taker/blob/main/assets/images/home_page.PNG) ![Notes page with no notes saved](https://github.com/oldgraybuzzard/note-taker/blob/main/assets/images/no_saved_notes.png) ![Notes entered](https://github.com/oldgraybuzzard/note-taker/blob/main/assets/images/entered_note.png)
 
 
 ## Contributors 😃
