@@ -5,15 +5,6 @@
 ## Description
 A simple note taking application which allows you to save notes with a title and plain text. This application is powered by Express, theis note Taker app makes creating, viewing, and deleting notes simple and easy!
 
-## Table of Contents
-* [Installations](#installations)
-* [URL Links](#URL_Links_to_Application)
-* [Usage](#usage)
-* [Contributors](#contributors)
-* [Features](#features)
-* [Tests](#tests)
-
-
 ## Installations (Dependencies) 💻
 To install dependencies, run these commands:
 ```
