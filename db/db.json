@@ -1,12 +1,14 @@
-[
-  {
-    "title": "fasadklfjaldkjfakldfa",
-    "text": "adf.a,dfk;lajdjfklajdsf",
-    "id": "1"
-  },
-  {
-    "title": "adfjakljf",
-    "text": "lkadjklfjd",
-    "id": "2"
-  }
-]
+{
+  "notes": [
+    {
+      "title": "fasadklfjaldkjfakldfa",
+      "text": "adf.a,dfk;lajdjfklajdsf",
+      "id": "1"
+    },
+    {
+      "title": "sdsDSDSD",
+      "text": "SDSDSDSD",
+      "id": "2"
+    }
+  ]
+}
